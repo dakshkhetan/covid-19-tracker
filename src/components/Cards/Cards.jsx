@@ -1,4 +1,5 @@
 import React from 'react';
+import CountUp from 'react-countup';
 import { Card, CardContent, Typography, Grid } from '@material-ui/core';
 
 import styles from './Cards.module.css';
@@ -18,7 +19,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
               Infected
             </Typography>
             <Typography variant="h5">
-              {confirmed.value}
+              <CountUp start={0} end={confirmed.value} duration={2.75} separator="," />
             </Typography>
             <Typography color="textSecondary">
               {new Date(lastUpdate).toDateString()}
@@ -34,7 +35,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
               Recovered
             </Typography>
             <Typography variant="h5">
-              {recovered.value}
+              <CountUp start={0} end={recovered.value} duration={2.75} separator="," />
             </Typography>
             <Typography color="textSecondary">
               {new Date(lastUpdate).toDateString()}
@@ -50,7 +51,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
               Deaths
             </Typography>
             <Typography variant="h5">
-              {deaths.value}
+              <CountUp start={0} end={deaths.value} duration={2.75} separator="," />
             </Typography>
             <Typography color="textSecondary">
               {new Date(lastUpdate).toDateString()}
