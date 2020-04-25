@@ -1,9 +1,13 @@
 import React from 'react';
 import { Card, CardContent, Typography, Grid } from '@material-ui/core';
+
 import styles from './Cards.module.css';
 
-const Cards = (props) => {
-  console.log(props);
+const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
+
+  if (!confirmed) {
+    return 'Loading...';
+  }
   
   return (
     <div className={styles.container}>
@@ -14,10 +18,10 @@ const Cards = (props) => {
               Infected
             </Typography>
             <Typography variant="h5">
-              Number
+              {confirmed.value}
             </Typography>
             <Typography color="textSecondary">
-              Date
+              {new Date(lastUpdate).toDateString()}
             </Typography>
             <Typography variant="body2" component="p">
               Number of active cases of COVID-19.
@@ -30,10 +34,10 @@ const Cards = (props) => {
               Recovered
             </Typography>
             <Typography variant="h5">
-              Number
+              {recovered.value}
             </Typography>
             <Typography color="textSecondary">
-              Date
+              {new Date(lastUpdate).toDateString()}
             </Typography>
             <Typography variant="body2" component="p">
               Number of recoveries from COVID-19.
@@ -46,10 +50,10 @@ const Cards = (props) => {
               Deaths
             </Typography>
             <Typography variant="h5">
-              Number
+              {deaths.value}
             </Typography>
             <Typography color="textSecondary">
-              Date
+              {new Date(lastUpdate).toDateString()}
             </Typography>
             <Typography variant="body2" component="p">
               Number of deaths caused by COVID-19.
