@@ -9,11 +9,6 @@ export default class App extends Component {
     data: {},
   }
 
-  // constructor(props) {
-  //   super(props)
-  //   this.state = {}
-  // }
-
   async componentDidMount() {
 
     const fetchedData = await fetchData();
@@ -24,13 +19,14 @@ export default class App extends Component {
 
   render() {
 
-    const { data } = this.state.data;
+    const { data } = this.state;
+
     return (
       <div className={styles.container}>
         <Cards data={data}/>
         <CountryPicker />
         <Chart />
       </div>
-    )
+    );
   }
 }
