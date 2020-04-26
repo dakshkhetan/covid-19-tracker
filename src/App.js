@@ -32,11 +32,27 @@ export default class App extends Component {
     const { data, country } = this.state;
 
     return (
-      <div className={styles.container}>
-        <img className={styles.image} src={image} alt="COVID-19" />
-        <Cards data={data} />
-        <CountryPicker handleCountryChange={this.handleCountryChange} />
-        <Chart data={data} country={country} />
+      <div>
+        <div className={styles.container}>
+          <img className={styles.image} src={image} alt="COVID-19" />
+          <Cards data={data} />
+          <CountryPicker handleCountryChange={this.handleCountryChange} />
+          <Chart data={data} country={country} /> 
+        </div>
+        <span className={styles.apiSpan}>
+          <span className={styles.apiTitleSpan}>API used: </span>
+          <a href="https://covid19.mathdro.id/api" className={styles.link}>
+            https://covid19.mathdro.id/api
+          </a>
+        </span>
+        <footer className={styles.footer}>
+          <span>
+            Made by 
+            <a href="https://github.com/dakshkhetan" className={styles.link} target='_blank' rel="noopener noreferrer">
+              &nbsp;Daksh Khetan
+            </a>.
+          </span>
+        </footer>
       </div>
     );
   }
