@@ -1,7 +1,7 @@
 # COVID-19 Tracker Web App!
 - Made using React.js, Chart.js, Material-UI
 
-![COVID-19 Tracker](https://i.ibb.co/X87BqVY/Screenshot-2020-04-13-at-10-14-58.png)
+![COVID-19 Tracker](https://github.com/dakshkhetan/covid-19-tracker/public/images/app-screenshot.png)
 
 #### [Live Site]() Soon!
 
