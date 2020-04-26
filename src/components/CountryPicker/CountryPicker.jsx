@@ -22,6 +22,7 @@ const CountryPicker = () => {
     <FormControl>
       <NativeSelect>
         <option value="global">Global</option>
+        {countries.map((country, i) => <option key={i} value={country}>{country}</option>)}
       </NativeSelect>
     </FormControl>
   );
