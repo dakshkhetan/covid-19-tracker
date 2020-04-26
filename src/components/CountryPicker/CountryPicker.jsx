@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NativeSelect, FormControl } from '@material-ui/core';
 
-import { fetchCountries } from '../../api';
+import { fetchCountries } from '../../api/index';
 
 import styles from './CountryPicker.module.css';
 

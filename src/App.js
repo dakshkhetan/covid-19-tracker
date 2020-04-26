@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import styles from './App.module.css';
 import { Cards, Chart, CountryPicker } from './components/index';
+
 import { fetchData } from './api/index';
+
+import image from './images/image.png';
 
 export default class App extends Component {
 
@@ -30,6 +33,7 @@ export default class App extends Component {
 
     return (
       <div className={styles.container}>
+        <img className={styles.image} src={image} alt="COVID-19" />
         <Cards data={data} />
         <CountryPicker handleCountryChange={this.handleCountryChange} />
         <Chart data={data} country={country} />
