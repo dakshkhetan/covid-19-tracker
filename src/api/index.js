@@ -32,12 +32,15 @@ export const fetchDailyData = async () => {
     
     const { data } = await axios.get(`${url}/daily`); // 'data' is an array
 
-    const modifiedData = data.map((dailyData) => ({
-      confirmed: dailyData.confirmed.total,
-      deaths: dailyData.deaths.total,
-      date: dailyData.reportDate,
-    }));
-    return modifiedData;
+    // const modifiedData = data.map((dailyData) => ({
+    //   confirmed: dailyData.confirmed.total,
+    //   deaths: dailyData.deaths.total,
+    //   date: dailyData.reportDate,
+    // }));
+    // return modifiedData;
+
+    // cleaner code (using destructuring and mapping):
+    return data.map(({ confirmed, deaths, reportDate: date }) => ({ confirmed: confirmed.total, deaths: deaths.total, date }));
 
   } catch(error) {
     // console.log(error);
