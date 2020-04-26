@@ -18,6 +18,7 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
   }, []);
 
   const lineChart = (
+    // dailyData.length
     dailyData[0] ? (
       <Line
         data={{

@@ -7,6 +7,7 @@ export const fetchData = async (country) => {
       
     let changeableUrl = url;
 
+    // if no country is passed as parameter then url is not modified
     if (country) {
       changeableUrl = `${url}/countries/${country}`;
     }
@@ -16,9 +17,9 @@ export const fetchData = async (country) => {
     return { confirmed, recovered, deaths, lastUpdate };
 
   } catch(error) {
-    // console.log(error);
+    console.log(error);
   }
-}
+};
 
 export const fetchDailyData = async () => {
   try {
@@ -36,9 +37,9 @@ export const fetchDailyData = async () => {
     return data.map(({ confirmed, deaths, reportDate: date }) => ({ confirmed: confirmed.total, deaths: deaths.total, date }));
 
   } catch(error) {
-    // console.log(error);
+    console.log(error);
   }
-}
+};
 
 export const fetchCountries = async () => {
   try {
@@ -47,6 +48,6 @@ export const fetchCountries = async () => {
     return countries.map((country) => country.name);
 
   } catch (error) {
-    // console.log(error);
+    console.log(error);
   }
-}
+};
