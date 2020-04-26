@@ -3,7 +3,7 @@
 
 ![COVID-19 Tracker](https://github.com/dakshkhetan/covid-19-tracker/blob/master/public/images/app-screenshot.png)
 
-#### [Live Site]() Soon!
+#### Live Site: (https://covid19-stats-tracker.herokuapp.com/) 
 
 API used: https://covid19.mathdro.id/api
 
